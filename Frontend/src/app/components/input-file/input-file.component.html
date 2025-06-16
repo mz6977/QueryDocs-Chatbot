@@ -1,0 +1,46 @@
+<section class="upload-section text-center py-5">
+  <div class="container">
+    <h1 class="upload-heading">Upload Your File</h1>
+    <p class="upload-description">
+      Upload your file and let the chatbot assist you in finding answers quickly and efficiently.
+    </p>
+    <div class="upload-actions">
+      <button 
+        class="btn btn-primary rounded-pill px-4 shadow-sm" 
+        data-bs-toggle="modal" 
+        data-bs-target="#uploadModal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-upload me-2" viewBox="0 0 16 16">
+          <path d="M.5 9.9a.5.5 0 0 1 .5-.5h4.793L5.146 8.354a.5.5 0 1 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L5.293 10.4H1a.5.5 0 0 1-.5-.5z"/>
+          <path d="M7.5 1a.5.5 0 0 1 .5.5v6.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7 8.293V1.5a.5.5 0 0 1 .5-.5z"/>
+        </svg>
+        Upload File
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for File Upload -->
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="uploadModalLabel">Upload Your File</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="file" (change)="onFileSelected($event)" class="form-control" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary rounded-pill px-4 shadow-sm" data-bs-dismiss="modal">Cancel</button>
+        <button 
+          type="button" 
+          class="btn btn-primary rounded-pill px-4 shadow-sm d-flex align-items-center justify-content-center" 
+          (click)="submitFile()" 
+          [disabled]="isLoading">
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+          <span>{{ isLoading ? 'Submitting...' : 'Submit' }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

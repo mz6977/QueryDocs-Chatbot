@@ -1,0 +1,59 @@
+<div *ngIf="isLoading" class="loading-indicator text-center">
+  <p>Loading chat history...</p>
+</div>
+
+<div *ngIf="!isLoading" class="chat-container d-flex">
+  <!-- Sidebar -->
+  <div 
+    class="chat-history-sidebar" 
+    [ngClass]="{ 'd-none': !showSidebar }">
+    <app-chat-history 
+      [chatHistory]="chatHistory" 
+      [showSidebar]="showSidebar" 
+      (chatSelected)="loadChat($event)"
+      (newChat)="startNewChat()">
+    </app-chat-history>
+  </div>
+
+  <!-- Main Chat Area -->
+  <div class="chat-main-area flex-grow-1 d-flex flex-column">
+    <div class="text-center my-3">
+      <h2>Ask The Docs</h2>
+    </div>
+
+    <!-- Chat Window -->
+    <div #chatWindow class="chat-window flex-grow-1 p-3 rounded shadow-sm">
+      <div *ngFor="let chat of currentSession.messages" 
+           [ngClass]="{'user-message': chat.role === 'user', 'bot-message': chat.role === 'bot'}">
+        <div class="message-bubble">
+          <pre class="message-text m-0" style="white-space: pre-wrap;">{{ chat.text }}</pre>
+          <div class="message-time text-muted small">{{ chat.timestamp | date:'shortTime' }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area d-flex align-items-center p-3 border rounded shadow-sm">
+      <textarea 
+        [(ngModel)]="userPrompt" 
+        class="form-control me-3 rounded-pill shadow-sm" 
+        rows="1" 
+        placeholder="Type your message..."
+        (keyup.enter)="submitPrompt()">
+      </textarea>
+      <button 
+        class="btn btn-gradient rounded-pill px-4 shadow-sm" 
+        (click)="submitPrompt()">
+        Send
+      </button>
+    </div>
+  </div>
+
+  <!-- Toggle Button -->
+  <button 
+    class="show-history" 
+    [ngStyle]="{ left: showSidebar ? '320px' : '20px' }"
+    (click)="toggleSidebar()">
+    {{ showSidebar ? 'Hide History' : 'Show History' }}
+  </button>
+</div>

@@ -1,0 +1,35 @@
+.chat-history {
+  background-color: #1e293b; /* Matches the sidebar and chat window background */
+  color: #ffffff; /* White text for contrast */
+  border-right: 1px solid #2563eb; /* Adds a subtle border for separation */
+  height: 100%; /* Full height to match the sidebar */
+  overflow-y: auto; /* Enables scrolling for long chat histories */
+  border-radius: 10px; /* Rounded corners for better design */
+}
+
+.chat-history h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.list-group-item {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: #2563eb; /* Highlight on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+}
+
+button {
+  background-color: #2563eb;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8; /* Darker blue on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+}

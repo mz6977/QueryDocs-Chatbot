@@ -1,0 +1,16 @@
+.footer {
+  background-color: #1e293b; /* Matches the sidebar and chat window background */
+  color: #ffffff; /* White text for contrast */
+  font-size: 14px;
+  border-top: 1px solid #2563eb; /* Adds a subtle border for separation */
+  padding: 10px 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer p:first-child {
+  font-weight: bold;
+}

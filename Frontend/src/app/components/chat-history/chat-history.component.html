@@ -1,0 +1,12 @@
+<div class="chat-history bg-dark text-white p-3 rounded shadow-sm">
+  <h5 class="text-center mb-3">Chat History</h5>
+  <ul class="list-group">
+    <li 
+      *ngFor="let chat of chatHistory; let i = index" 
+      class="list-group-item list-group-item-action bg-secondary text-white mb-2 rounded shadow-sm"
+      (click)="selectChat(i)">
+      {{ chat.title }}
+    </li>
+  </ul>
+  <button class="btn btn-primary w-100 mt-3 shadow-sm" (click)="startNewChat()">Start New Chat</button>
+</div>

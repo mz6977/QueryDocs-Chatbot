@@ -1,0 +1,5 @@
+/* Ensure the content takes up enough height to push the footer below the visible area */
+.content {
+    min-height: calc(100.7vh - 80px); /* Adjust based on the height of the navbar */
+    margin-bottom: 0; /* Ensure no extra margin pushes the footer into view */
+  }

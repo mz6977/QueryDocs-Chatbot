@@ -1,0 +1,74 @@
+/* Styling for the upload section */
+.upload-section {
+  background-color: #1e293b; /* Matches the sidebar and chat window background */
+  color: #ffffff; /* White text for contrast */
+  border-radius: 10px; /* Rounded corners for consistency */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  padding: 50px 20px;
+  margin: 20px auto;
+}
+
+.upload-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.upload-description {
+  font-size: 1.2rem;
+  color: #e2e8f0; /* Muted text color for better readability */
+  margin-bottom: 30px;
+}
+
+.upload-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #2563eb; /* Matches the primary blue color */
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8; /* Darker blue on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #1e293b; /* Matches the rest of the project */
+  color: #ffffff; /* White text for contrast */
+  border-bottom: 1px solid #1e293b; /* Subtle border for separation */
+}
+
+.modal-body {
+  background-color: #1e293b; /* Matches the rest of the project */
+  color: #ffffff; /* White text for contrast */
+}
+
+.modal-footer {
+  background-color: #1e293b; /* Matches the rest of the project */
+  color: #ffffff; /* White text for contrast */
+  border-top: 1px solid #1e293b; /* Subtle border for separation */
+}
+
+.modal-footer .btn {
+  transition: all 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+  transform: scale(1.05);
+}
